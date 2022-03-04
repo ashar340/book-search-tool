@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import "./App.css";
+import Search from "./components/Search";
+import Books from "./components/Books";
+import { Routes, Route } from "react-router-dom";
+import PageNotFound from "./components/404";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
+  const updateLoader = useCallback((v) => {
+    setLoading(v);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ErrorBoundary
+        FallbackComponent={() => <div>Oops!</div>}
+        onReset={() => {
+          // reset the state of your app so the error doesn't happen again
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<Search loading={loading} />}>
+            <Route index element={<></>} />
+            <Route
+              path="/search/:searchTerm"
+              element={<Books updateLoader={updateLoader} loading={loading} />}
+            />
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </ErrorBoundary>
   );
 }
 
