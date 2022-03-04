@@ -20,7 +20,7 @@ test("On navigating to a valid search route should show loading spinner", async 
 });
 
 
-it("show the sended message", () => {
+it("show predefined error when no search input is present", () => {
     const x = render(<StaticRouter> <Search /> </StaticRouter>);
     const inputValue = "";
 
