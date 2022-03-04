@@ -21,3 +21,19 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+
+## Screenshots
+
+### Lighthouse Report
+![Lighthouse Image](https://github.com/ashar340/book-search-tool/blob/master/assets/Screen%20Shot%202022-03-04%20at%204.29.24%20PM.png)
+
+### Search
+![Search](https://github.com/ashar340/book-search-tool/blob/master/assets/Screen%20Shot%202022-03-04%20at%204.27.32%20PM.png)
+### Pagination
+![Pagination](https://github.com/ashar340/book-search-tool/blob/master/assets/Screen%20Shot%202022-03-04%20at%204.31.16%20PM.png)
+### Book Results
+![Book Results](https://github.com/ashar340/book-search-tool/blob/master/assets/Screen%20Shot%202022-03-04%20at%204.28.11%20PM.png)
+
+## Links
+https://openlibrary.org/developers/api
